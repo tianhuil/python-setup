@@ -17,7 +17,7 @@ pylint==2.5.3
 python-dotenv==0.10.3
 invoke==1.4.1
 pytest==5.3.4
-mypy==0.761
+mypy==0.782
 
 # scraping
 lxml==4.5.2
