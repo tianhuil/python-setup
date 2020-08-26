@@ -2,19 +2,19 @@ SHELL := /bin/bash
 
 # set variables
 export NAME = example
-export PYTHON = pypy3  # or python3
+export PYTHON = python3
+export PIP = pip3
+export ROOT_DIR = $(shell pwd)
 
 create:
 	$$PYTHON -m venv env
 
-create-install:
-	$$PYTHON -m venv env
-	source env/bin/activate \
-		&& pip3 install -r requirements.txt \
-		&& ipython kernel install --user --name=$$NAME
-
 install:
-	source env/bin/activate && pip3 install -r requirements.txt
+	source env/bin/activate && $$PIP install -r requirements.txt
+
+create-install: create install
+	source env/bin/activate && ipython kernel install --user --name=$$NAME
+	echo "$$ROOT_DIR/src/" > $(shell ls -d env/lib/python*/site-packages)/local.pth
 
 # from https://stackoverflow.com/a/3452888/8930600
 upgrade:
