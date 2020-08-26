@@ -24,4 +24,4 @@ ipython:
 	source env/bin/activate && ipython --pdb
 
 jupyter:
-	source env/bin/activate && cd analysis && jupyter notebook
+	source env/bin/activate && jupyter notebook
