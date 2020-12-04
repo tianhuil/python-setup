@@ -6,7 +6,7 @@
       "**/.git/objects/**": true,
       "**/.git/subtree-cache/**": true,
       "**/node_modules/**": true,
-      "**/env/**",
+      "**/env/**": true,
       "**/.hg/store/**": true
     }
   }
