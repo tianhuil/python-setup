@@ -15,6 +15,9 @@ install:
 
 create-install: create install
 	source env/bin/activate && ipython kernel install --user --name=$$NAME
+	
+clean:
+	find . -name '*.pyc' -delete
 
 # from https://stackoverflow.com/a/3452888/8930600
 upgrade:
